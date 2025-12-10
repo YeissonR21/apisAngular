@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { IRickAndMortyCharacter, IRickAndMortyResponse } from '../../models/api.interfaces'; 
+import { IRickAndMortyCharacter, IRickAndMortyResponse } from '../../api.interfaces'; 
 
 @Injectable({
   providedIn: 'root'

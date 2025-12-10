@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,14 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class DragonBallApiService {
 
-  private http = inject(HttpClient);
   private apiUrl = 'https://dragonball-api.com/api/characters';
 
+  constructor(
+    private _httpClient: HttpClient
+  ) { }
   getAllCharacters(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this._httpClient.get<any>(this.apiUrl);
   }
 
   getCharacterById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+    return this._httpClient.get<any>(`${this.apiUrl}/${id}`);
   }
 }

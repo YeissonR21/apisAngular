@@ -2,19 +2,19 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'; 
 import { switchMap } from 'rxjs/operators';
-import { DragonBallApiService } from '../dragon-ball';
+import { SimpsonsApiService } from '../../../services/simpsons/simpsons';
 
 @Component({
-  selector: 'app-dragon-ball-detail',
+  selector: 'app-simpsons-detail',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './dragon-ball-detail.html', 
-  styleUrls: ['./dragon-ball-detail.scss']
+  templateUrl: './simpsons-detail.html', 
+  styleUrls: ['./simpsons-detail.scss']
 })
-export class DragonBallDetailComponent implements OnInit {
+export class SimpsonsDetailComponent implements OnInit {
   
   private route = inject(ActivatedRoute); 
-  private service = inject(DragonBallApiService);
+  private service = inject(SimpsonsApiService);
 
   character = signal<any>(null);
   isLoading = signal<boolean>(true);
@@ -27,11 +27,12 @@ export class DragonBallDetailComponent implements OnInit {
       })
     ).subscribe({
       next: (data) => {
-        this.character.set(data);
+        
+        this.character.set(data[0] || null); 
         this.isLoading.set(false);
       },
       error: (error) => {
-        console.error('Error cargando detalle de Dragon Ball:', error);
+        console.error('Error cargando detalle de Los Simpsons:', error);
         this.isLoading.set(false);
       }
     });

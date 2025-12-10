@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { CharacterListComponent } from './features/rick-and-morty/character-list/character-list'; 
-import { CharacterDetailComponent } from './features/rick-and-morty/character-detail/character-detail'; 
-import { DragonBallListComponent } from './features/dragon-ball/character-list/dragon-ball-list'; 
-import { DragonBallDetailComponent } from './features/dragon-ball/character-detail/dragon-ball-detail'; 
-import { SimpsonsListComponent } from './features/simpsons/character-list/simpsons-list'; 
-import { SimpsonsDetailComponent } from './features/simpsons/character-detail/simpsons-detail'; 
+import { CharacterListComponent } from './components/rickAndMorty/character-list/character-list'; 
+import { CharacterDetailComponent } from './components/rickAndMorty/character-detail/character-detail'; 
+import { SimpsonsListComponent } from './components/simpsons/character-list/simpsons-list'; 
+import { SimpsonsDetailComponent } from './components/simpsons/character-detail/simpsons-detail'; 
+import { DragonBallList } from './components/dragonBall/character-list/dragon-ball-list';
+import { DragonBallDetail } from './components/dragonBall/character-detail/dragon-ball-detail';
 
 export const routes: Routes = [
     {
@@ -27,11 +27,11 @@ export const routes: Routes = [
     
     {
         path: 'dragon-ball',
-        component: DragonBallListComponent 
+        component: DragonBallList 
     },
     {
         path: 'dragon-ball/:id', 
-        component: DragonBallDetailComponent 
+        component: DragonBallDetail 
     },
 
     

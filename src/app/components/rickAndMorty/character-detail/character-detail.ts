@@ -3,8 +3,8 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { RickAndMortyService } from '../rick-and-morty'; 
-import { IRickAndMortyCharacter } from '../../../models/api.interfaces'; 
+import { RickAndMortyService } from '../../../services/rickAndMorty/rick-and-morty'; 
+import { IRickAndMortyCharacter } from '../../../api.interfaces'; 
 
 @Component({
   selector: 'app-character-detail',

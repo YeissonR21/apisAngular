@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DragonBall } from './dragon-ball';
+import { DragonBall } from './dragon-ball-api-service';
 
 describe('DragonBall', () => {
   let service: DragonBall;

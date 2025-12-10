@@ -1,18 +1,18 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { DragonBallApiService } from '../dragon-ball';
-
+import { SimpsonsApiService } from '../../../services/simpsons/simpsons';
+import { ISimpsonsCharacter } from '../../../api.interfaces';
 @Component({
-  selector: 'app-dragon-ball-list',
+  selector: 'app-simpsons-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './dragon-ball-list.html',
-  styleUrls: ['./dragon-ball-list.scss']
+  templateUrl: './simpsons-list.html',
+  styleUrls: ['./simpsons-list.scss']
 })
-export class DragonBallListComponent implements OnInit {
+export class SimpsonsListComponent implements OnInit {
 
-  private service = inject(DragonBallApiService);
+  private service = inject(SimpsonsApiService);
   private router = inject(Router);
 
   characters = signal<any[]>([]);
@@ -25,7 +25,7 @@ export class DragonBallListComponent implements OnInit {
   loadCharacters() {
     this.service.getAllCharacters().subscribe({
       next: (data) => {
-        this.characters.set(data.items ?? []);
+        this.characters.set(data ?? []);
         this.isLoading.set(false);
       },
       error: () => {
@@ -35,6 +35,6 @@ export class DragonBallListComponent implements OnInit {
   }
 
   goToDetail(id: number) {
-    this.router.navigate(['/dragon-ball', id]);
+    this.router.navigate(['/simpsons', id]);
   }
 }

@@ -1,0 +1,13 @@
+<div class="dragon-detail-container" *ngIf="personajes as p">
+
+  <div class="card">
+    <img [src]="p.image" [alt]="p.name" />
+
+    <h2>{{ p.name }}</h2>
+    <p><strong>Raza:</strong> {{ p.race }}</p>
+    <p><strong>Ki:</strong> {{ p.ki }}</p>
+    <p><strong>Descripcion:</strong> {{ p.description }}</p>
+    
+  </div>
+
+</div>

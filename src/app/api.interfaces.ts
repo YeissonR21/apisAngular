@@ -36,16 +36,5 @@ export interface ISimpsonsResponse {
 }
 
 
-export interface IDragonBallCharacter {
-  id: number;
-  name: string;
-  image: string;
-  race: string;
-  ki: string;
-  description: string;
-}
 
-export interface IDragonBallResponse {
-  items: IDragonBallCharacter[];
-  meta: any;
-}
+

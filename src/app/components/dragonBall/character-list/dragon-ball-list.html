@@ -1,0 +1,21 @@
+<div class="list-title-db">
+    <h2>Characters of Dragon Ball Z</h2>
+
+<div class="character-grid-db">
+        @for (per of personajes; track per.id) {
+            <div class="db-card">
+                <img [src]="per.image" [alt]="per.name"/>
+                <div class="db-info">
+                    <h3>{{ per.name }}</h3>
+                    <p class="power">Ki: {{ per.ki}}</p>
+                    <a [routerLink]="['/dragon-ball', per.id]" class=" detail-link">Ver Detalles</a>
+                </div>
+            </div>
+        } 
+        
+        @empty {
+            <p class="empty-message">No se encontraron personajes de Dragon Ball.</p>
+        }
+</div>
+    
+</div>

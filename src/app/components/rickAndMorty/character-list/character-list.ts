@@ -2,9 +2,9 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router'; 
 
-import { RickAndMortyService } from '../rick-and-morty';
+import { RickAndMortyService } from '../../../services/rickAndMorty/rick-and-morty';
 
-import { IRickAndMortyCharacter } from '../../../models/api.interfaces';
+import { IRickAndMortyCharacter } from '../../../api.interfaces';
 
 @Component({
   selector: 'app-character-list',
