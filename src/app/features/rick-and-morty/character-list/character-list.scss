@@ -1,0 +1,44 @@
+.title-rm {
+  color: #95ff00; 
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #000000;
+  border: 5px solid #97ce4c;
+  border-radius: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: rgb(0, 255, 4);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #97ce4c;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 15px;
+    
+    h3 { margin: 0 0 10px 0; }
+    
+    
+    .Alive { color: #ffffff; }
+    .Dead { color: #d63d2e; }
+    .unknown { color: #515151; }
+  }
+}
